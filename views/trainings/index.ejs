@@ -1,0 +1,27 @@
+<!-- views/trainings/index.ejs -->
+
+<main class="container">
+    <h2>Search Trainings</h2>
+    <form class="search-form" action="/trainings" method="GET">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= searchOptions.name %>">
+        <button type="submit">Search</button>
+    </form>
+    <div class="training-list">
+        <% trainings.forEach(training=> { %>
+            <div class="training-item">
+                <h3>
+                    <%= training.name %>
+                </h3>
+                <p>Type: <%= training.type %>
+                </p>
+                <p>Duration: <%= training.duration %> minutes</p>
+                <p>Repetitions: <%= training.repetitions %>
+                </p>
+                <p>Intensity: <%= training.intensity %>
+                </p>
+                <a href="/trainings/<%= training._id %>/edit" class="edit">Edit</a>
+            </div>
+            <% }) %>
+    </div>
+</main>

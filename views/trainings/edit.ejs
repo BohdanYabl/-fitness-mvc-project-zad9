@@ -1,0 +1,7 @@
+<!-- views/trainings/edit.ejs -->
+<h2>Edit Training</h2>
+<form action="/trainings/<%= training._id %>?_method=PUT" method="POST">
+    <%- include('_form_fields') %>
+        <a href="/trainings">Cancel</a>
+        <button type="submit">Update</button>
+</form>
